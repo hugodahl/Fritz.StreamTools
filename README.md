@@ -1,6 +1,6 @@
 # Fritz.StreamTools
 
-Handy tools for managing my a live video stream and outputting video widgets that can be used directly in OBS or other streaming tools. 
+Handy tools for managing my a live video stream and outputting video widgets that can be used directly in OBS or other streaming tools.
 
 [![Build status](https://dev.azure.com/FritzAndFriends/Fritz.StreamTools/_apis/build/status/Fritz.StreamTools-Docker%20container-CI)](https://dev.azure.com/FritzAndFriends/Fritz.StreamTools/_build/latest?definitionId=7)
 
@@ -25,7 +25,7 @@ The project supports reading stream metrics from the following services:
 
 ## Contributing
 
-This application was built with ASP.NET Core 2.0 and can be built on Mac, Linux, and Windows.  Download the [.NET SDK](https://dot.net) and grab a copy of [Visual Studio Code](https://code.visualstudio.com) to get started on any platform.
+This application was built with ASP.NET Core 3.1 and can be built on Mac, Linux, and Windows.  Download the [.NET SDK](https://dot.net) and grab a copy of [Visual Studio Code](https://code.visualstudio.com) to get started on any platform.
 
 ### How to contribute
 
@@ -42,13 +42,13 @@ This application was built with ASP.NET Core 2.0 and can be built on Mac, Linux,
 
 ### Building and running locally
 
-1. Ensure pre-requisites:
-    1. [.NET Core 2.1 SDK](https://www.microsoft.com/net/download)
+1. Ensure the following pre-requisites are installed:
+    1. [.NET Core 3.1 SDK](https://www.microsoft.com/net/download)
     1. [Docker](https://docs.docker.com/install)
 1. Fork repository
 1. Clone
 1. (Recommended) Open in editor such as Visual Studio or Visual Studio Code
-1. Add GitHub > **User** and **[AuthenticationToken](https://github.com/settings/tokens)** to Fritz.StreamTools\appsettings.json (no scopes needed)
+1. Add GitHub > **User** and **[AuthenticationToken](https://github.com/settings/tokens)** to `Fritz.StreamTools\appsettings.json` (no scopes needed)
 1. Run `dotnet build .\Fritz.StreamTools.sln` to confirm build success
     1. If error: *A compatible SDK version for global.json version*, update the version in global.json to match your .NET version.
     1. If error: *\Fritz.StreamTools\Test\Test.csproj : error NU1605: Detected package downgrade*, update the version numbers to match what is expected based on the error.

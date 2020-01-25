@@ -1,1 +1,20 @@
-* text=auto
+# File type		| Text handling		| Diff rule		| EOL Style		| Other/Comment
+#-------------|-----------------|-------------|-------------|----------------------------------
+## Treat all files as text
+# Also, since we mostly work on Windows, we will default text line-endings to CRLF, and
+# explicitly handle those which should be platform-specific in this file
+* 							text=auto												eol=crlf
+
+# Specify rules which are file-type specific, or should be handled as a certain type
+*.cs															diff=csharp
+*.css															diff=css
+*.htm															diff=html
+*.html														diff=html
+*.*proj														diff=xml
+
+# For unix/macOS/WSL shell scripts, force LF line endings
+*.sh						text														eol=lf
+
+# Remove .png files from being treated as text
+*.png						-text
+
