@@ -1,8 +1,8 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS build
 WORKDIR /src
 COPY global.json .
 COPY Fritz.StreamTools/Fritz.StreamTools.csproj Fritz.StreamTools/
@@ -18,7 +18,7 @@ COPY Fritz.Twitch/. ../Fritz.Twitch/.
 RUN dotnet build -c Release -o /app --no-restore
 
 FROM build AS publish
-RUN dotnet publish -c Release -o /app 
+RUN dotnet publish -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
